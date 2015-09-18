@@ -5,7 +5,7 @@
  */
 package com.linksinnovation.spring;
 
-import com.linksinnovation.spring.service.MessageService;
+import com.linksinnovation.spring.service.BeanService;
 import java.util.Arrays;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -20,7 +20,7 @@ public class App {
         
         System.out.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
         
-        MessageService ms = context.getBean(MessageService.class);
-        System.out.println(ms.getMessage());
+        BeanService bean = context.getBean(BeanService.class);
+        System.out.println(bean.getLists().toString());
     }
 }

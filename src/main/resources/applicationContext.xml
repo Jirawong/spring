@@ -12,5 +12,22 @@
     <beans profile="spring">
         <bean id="spring" class="com.linksinnovation.spring.service.SpringMessageService" />
     </beans>
+    
+    <beans>
+        <bean class="com.linksinnovation.spring.service.BeanService">
+            <constructor-arg value="Hello," />
+            <property name="name" value="Beans Service!!!" />
+            <property name="lists">
+                <list>
+                    <value>value1</value>
+                    <value>value2</value>
+                </list>
+            </property>
+        </bean>
+        
+        <bean class="com.linksinnovation.spring.service.BeanServiceFactory" factory-method="getInstance">
+            <constructor-arg name="message" value="Create from Factory" />
+        </bean>
+    </beans>
 
 </beans>
