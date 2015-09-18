@@ -28,6 +28,16 @@
         <bean class="com.linksinnovation.spring.service.BeanServiceFactory" factory-method="getInstance">
             <constructor-arg name="message" value="Create from Factory" />
         </bean>
+        
+        
+        <bean class="com.linksinnovation.spring.service.BeanCaller1">
+            <property name="simpleMessageBean" ref="simpleMessageBean" />
+        </bean>
+        <bean class="com.linksinnovation.spring.service.BeanCaller2">
+            <property name="simpleMessageBean" ref="simpleMessageBean" />
+        </bean>
+        <bean id="simpleMessageBean" class="com.linksinnovation.spring.service.SimpleMessageBean" scope="prototype" />
+       
     </beans>
 
 </beans>
