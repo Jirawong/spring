@@ -66,13 +66,13 @@ public class BeanProcesser implements InitializingBean,BeanNameAware,BeanFactory
 
     @Override
     public Object postProcessBeforeInitialization(Object o, String string) throws BeansException {
-        System.out.println("postProcessBeforeInitialization "+string);
+        //System.out.println("postProcessBeforeInitialization "+string);
         return o;
     }
 
     @Override
     public Object postProcessAfterInitialization(Object o, String string) throws BeansException {
-        System.out.println("postProcessAfterInitialization "+string);
+        //System.out.println("postProcessAfterInitialization "+string);
         return o;
     }
 }

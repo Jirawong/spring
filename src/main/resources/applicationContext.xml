@@ -15,6 +15,7 @@
     
     <beans>
         <context:annotation-config />
+        <context:component-scan base-package="com.linksinnovation.spring" />
         <bean class="com.linksinnovation.spring.service.BeanService">
             <constructor-arg value="Hello," />
             <property name="name" value="Beans Service!!!" />
@@ -51,6 +52,7 @@
         <import resource="classpath:otherConfig.xml" />
         
         <bean id="bf" class="com.linksinnovation.spring.service.BeanProcesser" init-method="init" destroy-method="destroy" />
+        
        
     </beans>
 
