@@ -5,9 +5,9 @@
  */
 package com.linksinnovation.spring;
 
-import com.linksinnovation.spring.service.DependOn1;
+import com.linksinnovation.spring.service.BeanProcesser;
 import java.util.Arrays;
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -16,10 +16,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class App {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         
         System.out.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
         
-        DependOn1 bean = context.getBean(DependOn1.class);
+        BeanProcesser bean = context.getBean(BeanProcesser.class);
+        context.close();
     }
 }
