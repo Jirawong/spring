@@ -37,6 +37,15 @@
             <property name="simpleMessageBean" ref="simpleMessageBean" />
         </bean>
         <bean id="simpleMessageBean" class="com.linksinnovation.spring.service.SimpleMessageBean" scope="prototype" />
+        
+        
+        <bean id="injectBean"  class="com.linksinnovation.spring.service.InjectBean" />
+        <bean class="com.linksinnovation.spring.service.ConstructorBean">
+            <constructor-arg ref="injectBean" />
+        </bean> 
+        <bean class="com.linksinnovation.spring.service.SetterBean">
+            <property name="injectBean" ref="injectBean" />
+        </bean>
        
     </beans>
 

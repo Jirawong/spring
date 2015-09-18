@@ -7,6 +7,8 @@ package com.linksinnovation.spring;
 
 import com.linksinnovation.spring.service.BeanCaller1;
 import com.linksinnovation.spring.service.BeanCaller2;
+import com.linksinnovation.spring.service.ConstructorBean;
+import com.linksinnovation.spring.service.SetterBean;
 import java.util.Arrays;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -21,10 +23,10 @@ public class App {
         
         System.out.println(Arrays.toString(context.getEnvironment().getActiveProfiles()));
         
-        BeanCaller1 bc1 = context.getBean(BeanCaller1.class);
-        System.out.println(bc1.getSimpleMessageBean().getMessage());
-        bc1.getSimpleMessageBean().setMessage("bc1 change message");
-        BeanCaller2 bc2 = context.getBean(BeanCaller2.class);
-        System.out.println(bc2.getSimpleMessageBean().getMessage());
+        ConstructorBean cb = context.getBean(ConstructorBean.class);
+        System.out.println(cb.getInjectBean().getMessage());
+        
+        SetterBean sb = context.getBean(SetterBean.class);
+        System.out.println(sb.getInjectBean().getMessage());
     }
 }
