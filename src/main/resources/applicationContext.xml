@@ -46,6 +46,10 @@
         <bean class="com.linksinnovation.spring.service.SetterBean">
             <property name="injectBean" ref="injectBean" />
         </bean>
+        
+        <import resource="classpath:otherConfig.xml" />
+        
+        
        
     </beans>
 
